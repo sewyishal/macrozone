@@ -1,5 +1,5 @@
 import {StyleSheet,Text,View} from 'react-native';
-import { globalStyles,colors } from '../../styles/global';  
+import { globalStyles,colors } from '../styles/global';  
 
 export default function HomeHeader(){
     const currentDate = new Date().toLocaleDateString('en-US',{
