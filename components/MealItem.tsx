@@ -1,3 +1,4 @@
+import * as Haptics from 'expo-haptics';
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { deleteMeal } from '@/storage/meals';
 import { colors } from '../styles/global';
@@ -33,6 +34,7 @@ export default function MealItem({
         },
       },
     ]);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
   };
 
   return (

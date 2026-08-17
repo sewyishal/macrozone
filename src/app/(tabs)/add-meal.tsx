@@ -24,8 +24,7 @@ export default function AddMealScreen() {
       Alert.alert('Error', 'Please enter a meal name and calories.');
       return;
     }
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-
+   
     await addMeal({
       name,
       calories: Number(calories),
@@ -41,6 +40,7 @@ export default function AddMealScreen() {
     setFat('');
 
     Alert.alert('Success', 'Meal added successfully!');
+     await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     router.push('/');
   };
