@@ -6,7 +6,6 @@ import { useCallback,useState } from 'react';
 import HomeHeader from '../../../components/HomeHeader';
 import MacroGrid from '../../../components/MacroGrid';
 import RecentMeals from '../../../components/RecentMeals';
-
 export default function HomeScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
 
@@ -26,8 +25,8 @@ export default function HomeScreen() {
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
       <HomeHeader />
-      <MacroGrid/>
-      <RecentMeals/>
+      <MacroGrid meals={meals}/>
+      <RecentMeals meals={meals}/>
     </ScrollView>
   );
 }
