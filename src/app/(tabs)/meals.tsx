@@ -1,5 +1,5 @@
 import MealItem from '../../../components/MealItem';
-import { getMeals, Meal } from '@/storage/meals';
+import { clearAllMeals,getMeals, Meal } from '@/storage/meals';
 import { globalStyles } from '../../../styles/global';
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
@@ -12,6 +12,11 @@ export default function MealsScreen() {
     const data = await getMeals();
     setMeals(data);
   };
+
+  const handleClearAll = async () => {
+    await clearAllMeals();
+    loadMeals();
+  }
 
   useFocusEffect(
     useCallback(() => {
