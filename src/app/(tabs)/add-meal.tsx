@@ -1,3 +1,4 @@
+import * as Haptics from 'expo-haptics';
 import { addMeal } from '@/storage/meals';
 import { colors, globalStyles } from'../../../styles/global';
 import { router } from 'expo-router';
@@ -23,6 +24,7 @@ export default function AddMealScreen() {
       Alert.alert('Error', 'Please enter a meal name and calories.');
       return;
     }
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
 
     await addMeal({
       name,
