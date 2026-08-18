@@ -6,6 +6,9 @@ import { useCallback,useState } from 'react';
 import HomeHeader from '../../../components/HomeHeader';
 import MacroGrid from '../../../components/MacroGrid';
 import RecentMeals from '../../../components/RecentMeals';
+import ShareButton  from '../../../components/ShareButton';
+import CopyButton from '../../../components/CopyButton';
+import ReminderToggle from '../../../components/ReminderToggle';
 export default function HomeScreen() {
   const [meals, setMeals] = useState<Meal[]>([]);
 
@@ -24,9 +27,12 @@ export default function HomeScreen() {
   return (
     <ScrollView style={globalStyles.container}>
       <Text style={globalStyles.title}>MacroZone</Text>
+      <ShareButton meals={meals} />
       <HomeHeader />
       <MacroGrid meals={meals}/>
+      
       <RecentMeals meals={meals} onDelete={loadMeals}/>
+      <ReminderToggle />
     </ScrollView>
   );
 }
